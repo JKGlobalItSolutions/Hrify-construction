@@ -110,22 +110,7 @@ export default function Navbar({ onNavigate }) {
           </li>
 
           {/* INTERIOR & EXTERIOR */}
-          <li style={liStyle} className="dropdown">
-            Interior & Exterior
-            <div style={dropdownStyle} className="dropdown-menu">
-              {[
-                "Modular kitchens & false ceilings",
-                "Flooring & painting",
-                "Façade works & Elevation design",
-                "Cladding & Waterproofing",
-                "Landscaping",
-              ].map((item, i) => (
-                <div key={i} style={dropdownItem}>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </li>
+          
 
           {/* DESIGN */}
           <li style={liStyle} onClick={(e) => handleNavClick('designbuild', e)} className="dropdown">
