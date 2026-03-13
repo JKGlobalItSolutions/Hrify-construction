@@ -6,10 +6,10 @@ import awardsImg from "../assets/awards.png";
 
 export default function Home() {
   return (
-    <main style={{ width: "100%" }}>
+    <main style={{ width: "100%", padding: "0", margin: "0", overflow: "hidden" }}>
 
       {/* HERO SECTION */}
-      <section>
+      <section style={{ padding: "0" }}>
         <img
           src={heroImg}
           alt="Hrify Construction"
@@ -27,6 +27,7 @@ export default function Home() {
           background: "linear-gradient(90deg, #1e5d78, #3b8fa8)",
           color: "#ffffff",
           padding: "50px 80px",
+          boxSizing: "border-box",
         }}
       >
         <h2
@@ -59,9 +60,11 @@ export default function Home() {
         style={{
           padding: "60px 80px",
           backgroundColor: "#ffffff",
+          boxSizing: "border-box",
         }}
       >
         <div
+          className="feature-cards-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -99,6 +102,7 @@ export default function Home() {
                   fontWeight: "700",
                   textTransform: "uppercase",
                   zIndex: 2,
+                  boxSizing: "border-box",
                 }}
               >
                 {item.title}
@@ -108,6 +112,7 @@ export default function Home() {
               <img
                 src={item.img}
                 alt={item.title}
+                className="feature-card-image"
                 style={{
                   width: "100%",
                   height: "360px",

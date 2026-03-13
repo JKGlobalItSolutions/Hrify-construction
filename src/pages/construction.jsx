@@ -3,16 +3,17 @@ import constructionSide from "../assets/construction/Construction-side.png";
 
 export default function Construction() {
   return (
-    <div>
+    <div style={styles.page}>
       {/* ================= BANNER ================= */}
       <img
         src={Constructionbanner}
         alt="construction Banner"
         style={styles.banner}
+        className="page-banner"
       />
 
       {/* ================= CONTENT ================= */}
-      <div style={styles.container}>
+      <div style={styles.container} className="service-container">
         {/* LEFT CONTENT */}
         <div style={styles.left}>
           <p style={styles.paragraph}>
@@ -40,7 +41,7 @@ export default function Construction() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div style={styles.right}>
+        <div style={styles.right} className="service-right">
           <img
             src={constructionSide}
             alt="construction Planning"
@@ -53,6 +54,11 @@ export default function Construction() {
 }
 
 const styles = {
+  page: {
+    width: "100%",
+    overflow: "hidden",
+  },
+
   banner: {
     width: "100%",
     height: "650px",
@@ -65,8 +71,10 @@ const styles = {
     justifyContent: "space-between",
     gap: "50px",
     padding: "60px 80px",
-    maxWidth: "1200px",
+    maxWidth: "1500px",
     margin: "0 auto",
+    boxSizing: "border-box",
+    flexWrap: "wrap",
   },
   brand: {
     color: "#1f7aa8", // HRIFY site blue
@@ -76,15 +84,19 @@ const styles = {
   left: {
     flex: 1,
     textAlign: "left",
+    minWidth: "280px",
   },
 
   right: {
     width: "360px",
+    flexShrink: 0,
+    maxWidth: "100%",
   },
 
   sideImage: {
     width: "100%",
     borderRadius: "4px",
+    height: "auto",
   },
 
   paragraph: {

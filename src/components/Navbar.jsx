@@ -1,10 +1,13 @@
+import { useState } from "react";
 import logo from "../assets/logo.png";
 
 export default function Navbar({ onNavigate }) {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navStyle = {
     width: "100%",
     backgroundColor: "#0f2f3a",
-    display: "flex",
     justifyContent: "center",
   };
 
@@ -15,6 +18,8 @@ export default function Navbar({ onNavigate }) {
     padding: "0 40px",
     color: "#fff",
     alignItems: "center",
+    justifyContent: "center",   // ⭐ added
+    width: "100%"               // ⭐ added
   };
 
   const liStyle = {
@@ -22,8 +27,9 @@ export default function Navbar({ onNavigate }) {
     padding: "18px 16px",
     cursor: "pointer",
     fontSize: "18px",
-      fontWeight: "500",
+    fontWeight: "500",
     whiteSpace: "nowrap",
+    textAlign: "center"        // ⭐ added
   };
 
   const dropdownStyle = {
@@ -44,21 +50,10 @@ export default function Navbar({ onNavigate }) {
     cursor: "pointer",
   };
 
-  const dropdownText = {
-    padding: "14px 18px",
-    borderBottom: "1px solid rgba(255,255,255,0.3)",
-    color: "#fff",
-    fontSize: "18px",
-    cursor: "default",
-  };
-
   const handleNavClick = (page, event) => {
-    if (event) {
-      event.stopPropagation();
-    }
-    if (onNavigate) {
-      onNavigate(page);
-    }
+    if (event) event.stopPropagation();
+    if (onNavigate) onNavigate(page);
+    setMenuOpen(false);
   };
 
   return (
@@ -74,82 +69,100 @@ export default function Navbar({ onNavigate }) {
         }}
       >
         <img src={logo} alt="Hrify Construction" style={{ height: "48px" }} />
-        <div style={{ fontSize: "24px", cursor: "pointer" }}>☰</div>
+
+        {/* HAMBURGER */}
+        <div
+          className="mobile-menu"
+          style={{ fontSize: "26px", cursor: "pointer" }}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </div>
       </div>
 
       {/* NAV MENU */}
-      <nav style={navStyle}>
-        <ul style={ulStyle}>
-          <li style={liStyle} onClick={() => handleNavClick('home')}>Home</li>
-          {/* <li style={liStyle} onClick={() => handleNavClick('homes')}>Homes</li>  */}
-          <li style={liStyle} onClick={() => handleNavClick('about')}>About us</li>
+      <nav
+        style={{
+          ...navStyle,
+          display: menuOpen ? "block" : ""
+        }}
+        className="main-nav"
+      >
+        <ul style={ulStyle} className="nav-list">
+
+          <li style={liStyle} onClick={() => handleNavClick("home")}>Home</li>
+          <li style={liStyle} onClick={() => handleNavClick("about")}>About us</li>
 
           {/* SERVICES */}
-          <li style={liStyle} className="dropdown"onClick={(e) => handleNavClick( 'Construction', e)} >
+          <li style={liStyle} 
+  className="dropdown"
+  onClick={() => handleNavClick("Construction")}>
             Services
             <div style={dropdownStyle} className="dropdown-menu">
-              <div style={dropdownItem} onClick={(e) => handleNavClick('civilstructural', e)}>
-                Civil & Structural Engineering
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('publichealth', e)}>
-                Public Health Engineering
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('fire', e)}>
-                Fire & Life Safety System
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('electrical', e)}>
-                Electrical Engineering
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('hvac', e)}>
-                HVAC & Mechanical Engineering
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('green', e)}>
-                Green Building Solutions
-              </div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("civilstructural",e)}>Civil & Structural Engineering</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("publichealth",e)}>Public Health Engineering</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("fire",e)}>Fire & Life Safety System</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("electrical",e)}>Electrical Engineering</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("hvac",e)}>HVAC & Mechanical Engineering</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("green",e)}>Green Building Solutions</div>
             </div>
           </li>
-
-          {/* INTERIOR & EXTERIOR */}
-          
 
           {/* DESIGN */}
-          <li style={liStyle} onClick={(e) => handleNavClick('designbuild', e)} className="dropdown">
+          <li style={liStyle} 
+  className="dropdown"
+  onClick={() => handleNavClick("designbuild")}>
             Design
             <div style={dropdownStyle} className="dropdown-menu">
-              {/* <div style={dropdownItem} onClick={(e) => handleNavClick('designbuild', e)}>
-                Design-Build
-              </div> */}
-              <div style={dropdownItem} onClick={(e) => handleNavClick('architectural', e)}>
-                Architectural planning
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('interior', e)}>
-                Interior layouts
-              </div>
-              <div style={dropdownItem} onClick={(e) => handleNavClick('structuralDesign', e)}>
-                Structural Design Coordination
-              </div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("architectural",e)}>Architectural planning</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("interior",e)}>Interior layouts</div>
+              <div style={dropdownItem} onClick={(e)=>handleNavClick("structuralDesign",e)}>Structural Design Coordination</div>
             </div>
           </li>
 
-          <li style={liStyle} onClick={() => handleNavClick('projects')}>Projects</li>
-          <li style={liStyle} onClick={() => handleNavClick('infrastructure')}>Infrastructure</li>
-          <li style={liStyle} onClick={() => handleNavClick('client')} >Clients</li>
-          <li style={liStyle} onClick={() => handleNavClick('contact')}>Contacts</li>
+          <li style={liStyle} onClick={()=>handleNavClick("projects")}>Projects</li>
+          <li style={liStyle} onClick={()=>handleNavClick("infrastructure")}>Infrastructure</li>
+          <li style={liStyle} onClick={()=>handleNavClick("client")}>Clients</li>
+          <li style={liStyle} onClick={()=>handleNavClick("contact")}>Contacts</li>
+
         </ul>
       </nav>
 
-      {/* INLINE HOVER LOGIC */}
       <style>
         {`
-          .dropdown-menu {
-            display: none;
+        .dropdown-menu{
+          display:none;
+        }
+
+        .dropdown:hover .dropdown-menu{
+          display:block;
+        }
+
+        ul li:hover{
+          background:#143e4d;
+        }
+
+        .mobile-menu{
+          display:none;
+        }
+
+        @media(max-width:768px){
+
+          .mobile-menu{
+            display:block;
           }
-          .dropdown:hover .dropdown-menu {
-            display: block;
+
+          .main-nav{
+            display:none;
           }
-          ul li:hover {
-            background-color: #143e4d;
+
+          .nav-list{
+            flex-direction:column !important;
+            width:100%;
+            align-items:center;   /* ⭐ center mobile */
           }
+
+        }
         `}
       </style>
     </>

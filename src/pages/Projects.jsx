@@ -5,13 +5,15 @@ import project4 from "../assets/projects/project4.png";
 
 export default function Projects() {
   return (
-    <main style={{ width: "100%" }}>
+    <main style={{ width: "100%", overflow: "hidden" }}>
 
       <section
+        className="projects-section"
         style={{
           background: "linear-gradient(180deg, #0e3a4a, #4f9fbf)",
           padding: "60px 80px",
           color: "#fff",
+          boxSizing: "border-box",
         }}
       >
         {/* HEADER */}
@@ -40,10 +42,13 @@ export default function Projects() {
 
         {/* PROJECT GRID */}
         <div
+          className="projects-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
             gap: "30px",
+            maxWidth: "1200px",
+            margin: "0 auto",
           }}
         >
           {/* CARD 1 */}

@@ -12,6 +12,7 @@ export default function About() {
         src={aboutBanner}
         alt="About HRIFY Construction"
         style={styles.banner}
+        className="page-banner"
       />
 
       {/* ===== TEXT CONTENT ===== */}
@@ -48,8 +49,8 @@ export default function About() {
       </div>
 
       {/* ===== WHY CHOOSE SECTION ===== */}
-      <div style={styles.whyChoose}>
-        <div style={styles.whyLeft}>
+      <div style={styles.whyChoose} className="about-why-choose">
+        <div style={styles.whyLeft} className="about-why-left">
           <h2 style={styles.whyTitle}>Why Choose HRIFY Construction?</h2>
 
           <ul style={styles.whyList}>
@@ -61,7 +62,7 @@ export default function About() {
           </ul>
         </div>
 
-        <div style={styles.whyRight}>
+        <div style={styles.whyRight} className="about-why-right">
           <img
             src={whyChooseImg}
             alt="Why Choose Us"
@@ -71,8 +72,8 @@ export default function About() {
       </div>
 
       {/* ===== VISION & MISSION ===== */}
-      <div style={styles.vmSection}>
-        <div style={styles.directorSection}>
+      <div style={styles.vmSection} className="about-vm-section">
+        <div style={styles.directorSection} className="about-director-section">
           <div style={styles.directorCard}>
             <img
               src={directorImg}
@@ -117,6 +118,7 @@ const styles = {
   page: {
     width: "100%",
     backgroundColor: "#ffffff",
+    overflow: "hidden",
   },
 
   banner: {
@@ -130,6 +132,7 @@ const styles = {
     maxWidth: "1600px",
     margin: "40px auto",
     padding: "0 20px",
+    boxSizing: "border-box",
   },
 
   paragraph: {
@@ -151,11 +154,14 @@ const styles = {
     background: "linear-gradient(135deg, #1a4d5e 0%, #2d6b7e 50%, #4a8da3 100%)",
     padding: "60px 100px",
     gap: "80px",
+    boxSizing: "border-box",
+    flexWrap: "wrap",
   },
 
   whyLeft: {
     flex: 1,
     maxWidth: "600px",
+    minWidth: "280px",
   },
 
   whyTitle: {
@@ -184,6 +190,7 @@ const styles = {
   whyRight: {
     width: "450px",
     flexShrink: 0,
+    maxWidth: "100%",
   },
 
   whyImage: {
@@ -199,6 +206,8 @@ const styles = {
     maxWidth: "1200px",
     margin: "80px auto 60px",
     padding: "0 40px",
+    boxSizing: "border-box",
+    flexWrap: "wrap",
   },
 
   directorSection: {
@@ -249,6 +258,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     gap: "40px",
+    minWidth: "280px",
   },
 
   vmBlock: {

@@ -5,7 +5,7 @@ export default function Interior() {
   return (
     <div style={styles.page}>
       {/* ===== BANNER IMAGE ===== */}
-      <img src={interiorbanner} alt="Interior layouts" style={styles.banner} />
+      <img src={interiorbanner} alt="Interior layouts" style={styles.banner} className="page-banner" />
 
       {/* ===== CONTENT SECTION ===== */}
       <div style={styles.content}>
@@ -38,6 +38,7 @@ const styles = {
   page: {
     width: "100%",
     backgroundColor: "#ffffff",
+    overflow: "hidden",
   },
 
   banner: {
@@ -52,6 +53,7 @@ const styles = {
     margin: "40px auto 30px",
     padding: "0 20px",
     textAlign: "center",
+    boxSizing: "border-box",
   },
 
   title: {
@@ -72,6 +74,7 @@ const styles = {
     maxWidth: "1600px",
     margin: "0 auto 60px",
     padding: "0 20px",
+    boxSizing: "border-box",
   },
 
   siteImage: {

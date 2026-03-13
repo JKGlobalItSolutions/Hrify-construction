@@ -4,7 +4,7 @@ export default function Contact() {
       <section style={styles.container}>
         <span style={styles.smallText}>Connect with us</span>
 
-        <h1 style={styles.heading}>Contact us</h1>
+        <h1 style={styles.heading} className="contact-heading">Contact us</h1>
 
         <p style={styles.subText}>
           We're here to help – Reach out anytime
@@ -12,7 +12,7 @@ export default function Contact() {
 
         {/* FORM */}
         <form style={styles.form}>
-          <div style={styles.row}>
+          <div style={styles.row} className="contact-form-row">
             <input
               type="text"
               placeholder="Your name*"
@@ -60,6 +60,8 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    boxSizing: "border-box",
+    padding: "20px",
   },
 
   container: {
@@ -68,6 +70,7 @@ const styles = {
     padding: "80px 20px",
     textAlign: "center",
     color: "#ffffff",
+    boxSizing: "border-box",
   },
 
   smallText: {
@@ -92,12 +95,14 @@ const styles = {
   form: {
     maxWidth: "650px",
     margin: "0 auto",
+    width: "100%",
   },
 
   row: {
     display: "flex",
     gap: "20px",
     marginBottom: "20px",
+    flexWrap: "wrap",
   },
 
   input: {
@@ -109,6 +114,8 @@ const styles = {
     color: "#fff",
     fontSize: "14px",
     outline: "none",
+    minWidth: "200px",
+    boxSizing: "border-box",
   },
 
   textarea: {
@@ -123,6 +130,7 @@ const styles = {
     outline: "none",
     marginBottom: "25px",
     resize: "none",
+    boxSizing: "border-box",
   },
 
   button: {
@@ -135,6 +143,7 @@ const styles = {
     fontSize: "15px",
     fontWeight: "600",
     cursor: "pointer",
+    maxWidth: "100%",
   },
 
   checkboxRow: {
@@ -143,6 +152,7 @@ const styles = {
     justifyContent: "center",
     gap: "10px",
     marginTop: "20px",
+    flexWrap: "wrap",
   },
 
   checkboxText: {

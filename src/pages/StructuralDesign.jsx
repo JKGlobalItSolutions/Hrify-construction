@@ -3,9 +3,9 @@ import structuralBottom from "../assets/Designbuild/structural-side.png";
 
 export default function StructuralDesign() {
   return (
-    <main style={{ width: "100%", backgroundColor: "#ffffff" }}>
+    <main style={{ width: "100%", backgroundColor: "#ffffff", overflow: "hidden" }}>
       {/* ================= TOP IMAGE ================= */}
-      <section>
+      <section style={{ padding: "0" }}>
         <img
           src={structuralTop}
           alt="Structural Design Coordination"
@@ -14,6 +14,7 @@ export default function StructuralDesign() {
             height: "auto",
             display: "block",
           }}
+          className="page-banner"
         />
       </section>
 
@@ -24,6 +25,7 @@ export default function StructuralDesign() {
           maxWidth: "1200px",
           margin: "0 auto",
           textAlign: "center",
+          boxSizing: "border-box",
         }}
       >
         <h2
@@ -64,6 +66,7 @@ export default function StructuralDesign() {
           padding: "30px 80px 70px",
           maxWidth: "1600px",
           margin: "0 auto",
+          boxSizing: "border-box",
         }}
       >
         <img

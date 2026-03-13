@@ -5,57 +5,42 @@ export default function Footer() {
     <footer
       style={{
         width: "100%",
-        background:
-          "linear-gradient(90deg, #ffffff 0%, #d3dde0 40%, #6e8b94 65%, #0f3b46 100%)",
+        backgroundColor: "#0f3b46",
         padding: "40px 60px 25px",
         boxSizing: "border-box",
       }}
     >
-      {/* TOP SECTION */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "flex-start",
+          flexWrap: "wrap",
+          gap: "40px",
         }}
       >
-        {/* LEFT LOGO */}
+        {/* LOGO */}
         <div>
           <img
             src={logo}
             alt="Hrify Construction"
             style={{
               height: "110px",
-              display: "block",
-              justifyContent:"center",
+              maxWidth: "100%",
             }}
           />
         </div>
 
-        {/* RIGHT MENU */}
-        <div
-          style={{
-            color: "#ffffff",
-            minWidth: "260px",
-            paddingTop: "10px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "26px",
-              fontWeight: "600",
-              marginBottom: "6px",
-            }}
-          >
+        {/* MENU */}
+        <div style={{ color: "#fff", minWidth: "200px" }}>
+          <h2 style={{ fontSize: "24px", marginBottom: "6px" }}>
             Hrify Construction
           </h2>
 
-          {/* DASH LINE */}
           <div
             style={{
               width: "70px",
               height: "2px",
-              backgroundColor: "#ffffff",
+              backgroundColor: "#fff",
               marginBottom: "18px",
             }}
           />
@@ -75,7 +60,7 @@ export default function Footer() {
                 display: "flex",
                 alignItems: "center",
                 fontSize: "16px",
-                marginBottom: "14px",
+                marginBottom: "12px",
                 cursor: "pointer",
               }}
             >
@@ -84,14 +69,59 @@ export default function Footer() {
             </div>
           ))}
         </div>
+
+        {/* CONTACT */}
+        <div style={{ color: "#fff", maxWidth: "280px" }}>
+          <h3 style={{ fontSize: "22px", marginBottom: "6px" }}>
+            Contact Us
+          </h3>
+
+          <div
+            style={{
+              width: "70px",
+              height: "2px",
+              backgroundColor: "#fff",
+              marginBottom: "18px",
+            }}
+          />
+
+          <p style={{ fontSize: "15px", lineHeight: "1.6" }}>
+            Annai Parvathi Nagar, Opp. Collector Office,
+            <br />
+            Vengikkal, Tiruvannamalai – 606604
+          </p>
+
+          <p style={{ fontSize: "15px" }}>
+            📞 +91 98765 43210
+          </p>
+
+          <p style={{ fontSize: "15px" }}>
+            ✉ info@hrifyconstruction.com
+          </p>
+
+          {/* SOCIAL ICONS */}
+          <div
+            style={{
+              display: "flex",
+              gap: "15px",
+              marginTop: "15px",
+              fontSize: "22px",
+            }}
+          >
+            <i className="bi bi-facebook" style={{ cursor: "pointer" }}></i>
+            <i className="bi bi-instagram" style={{ cursor: "pointer" }}></i>
+            <i className="bi bi-youtube" style={{ cursor: "pointer" }}></i>
+            <i className="bi bi-linkedin" style={{ cursor: "pointer" }}></i>
+          </div>
+        </div>
       </div>
 
-      {/* HORIZONTAL DIVIDER */}
+      {/* DIVIDER */}
       <div
         style={{
           width: "100%",
           height: "1px",
-          backgroundColor: "rgba(255,255,255,0.6)",
+          backgroundColor: "rgba(255,255,255,0.5)",
           margin: "28px 0 18px",
         }}
       />
@@ -101,7 +131,7 @@ export default function Footer() {
         style={{
           textAlign: "center",
           fontSize: "15px",
-          color: "#000",
+          color: "#fff",
         }}
       >
         Copyright 2025 | www.hrifyconstruction.com | All rights reserved.

@@ -6,7 +6,7 @@ import workerImg from "../assets/worker.png";
 
 export default function Home() {
   return (
-    <main style={{ width: "100%", backgroundColor: "#ffffff" }}>
+    <main style={{ width: "100%", backgroundColor: "#ffffff", overflow: "hidden" }}>
       {/* ================= HERO GRADIENT (NO IMAGE) ================= */}
       <section
         style={{
@@ -35,7 +35,9 @@ export default function Home() {
           gridTemplateColumns: "1.3fr 0.7fr",
           gap: "40px",
           alignItems: "start",
+          boxSizing: "border-box",
         }}
+        className="service-container"
       >
         {/* LEFT CONTENT */}
         <div>
@@ -89,7 +91,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div>
+        <div className="service-right">
           <img
             src={workerImg}
             alt="Construction Work"
@@ -108,9 +110,11 @@ export default function Home() {
         style={{
           padding: "60px 80px",
           backgroundColor: "#ffffff",
+          boxSizing: "border-box",
         }}
       >
         <div
+          className="feature-cards-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -148,6 +152,7 @@ export default function Home() {
                   fontWeight: "700",
                   textTransform: "uppercase",
                   zIndex: 2,
+                  boxSizing: "border-box",
                 }}
               >
                 {item.title}
@@ -157,6 +162,7 @@ export default function Home() {
               <img
                 src={item.img}
                 alt={item.title}
+                className="feature-card-image"
                 style={{
                   width: "100%",
                   height: "360px",

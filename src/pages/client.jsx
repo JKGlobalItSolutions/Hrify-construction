@@ -2,7 +2,7 @@ import clientBanner from "../assets/client/hero-client.png";
 
 export default function Clients() {
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", overflow: "hidden" }}>
 
       {/* ===== BANNER ===== */}
       <img
@@ -22,6 +22,7 @@ export default function Clients() {
           padding: "40px 80px",
           backgroundColor: "#ffffff",
           textAlign: "center",
+          boxSizing: "border-box",
         }}
       >
         <p
